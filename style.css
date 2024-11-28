@@ -1,0 +1,292 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap'); */
+
+@font-face {
+    font-family: "Poppins-SemiBold";
+    src: url("./fonts/Poppins-SemiBold.ttf") format('truetype');
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Poppins-Regular";
+    src: url("./fonts/Poppins-Regular.ttf") format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url("./fonts/OpenSans-VariableFont_wdth\,wght.ttf") format('truetype');
+    font-weight: 400 900;
+}
+:root {
+  --clr-Violet: hsl(257, 40%, 49%);
+  --clr-Soft_Magenta: hsl(300, 69%, 71%);
+
+  --ff-primary: "Open Sans";
+  --ff-secondary_regular: "Poppins-Regular";
+  --ff-secondary_semibold: "Poppins-SemiBold";
+
+  --fw-400: 400;
+  --fw-600: 600;
+
+  --fs-large: 3.5rem;
+  --fs-regular: 1.4rem;
+}
+
+body{
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-400);
+    font-size: var(--fs-regular);
+    background-color: var(--clr-Violet);
+    background-image: url("/images/bg-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    gap: 4rem;
+    color: #ffffff;
+    letter-spacing: .5px;
+}
+
+header{
+    padding: 2rem 4rem;
+}
+
+.flex{
+    display: flex;
+}
+
+.wrapper{
+    gap: 3rem;
+}
+
+.front_image img{
+    width: 900px;
+    padding-left: 4rem;
+}
+
+.information{
+    max-width: 700px;
+    padding: 2.5rem 4rem 0 0;
+    flex-shrink: 4;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.information h1{
+    font-family: var(--ff-secondary_semibold);
+    font-size: var(--fs-large);
+    font-weight: var(--fw-600);
+}
+
+.information button{
+    align-self: flex-start;
+    border: none;
+    padding: 1rem 4rem;
+    border-radius: 10rem;
+    color: var(--clr-Violet);
+    font-size: var(--fs-regular);
+    font-family: var(--ff-secondary_regular);
+    box-shadow: 0 0 10px #000000a8;
+}
+.information button:hover{
+    background-color: var(--clr-Soft_Magenta);  
+    color: #ffffff; 
+    cursor: pointer;
+}
+
+.social{
+    padding: 0 6rem 0rem 0;
+    gap:2rem;
+    justify-content: flex-end;
+}
+
+.social a i{
+    color: #ffffff;
+    padding: .5rem;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+.social a #facebook-icon{
+    padding: .5rem .75rem;
+}
+
+.social a i:hover{
+    background-color: var(--clr-Violet);  
+    color: var(--clr-Soft_Magenta);
+    border: 2px solid var(--clr-Soft_Magenta); 
+    cursor: pointer;
+}
+
+@media (max-width:1440px) {
+    .information h1{
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+    .information p{
+        font-size: 1.225rem;
+    }
+
+    .information button{   
+        padding: 1rem 3rem;
+        border-radius: 8rem;
+        font-size: 1.225rem;
+    }
+}
+
+@media (max-width:1250px){
+    .wrapper{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-inline: 3rem;
+    }
+    .front_image img{
+        width: 600px;
+        padding-left: 0rem;
+    }
+    .information{
+        padding: 2.5rem 0 0 0;
+    }
+
+    .information h1,p{
+        text-align: center;
+        align-self: center;
+    }
+    .information button{  
+        align-self: center;
+    }
+    .information button{   
+        padding: 1rem 4rem;
+        border-radius: 8rem;
+        font-size: 1.225rem;
+    }
+    .social{
+        justify-content: center;
+        padding: 0;
+        margin-bottom:1rem;
+    }
+}
+
+@media (max-width:700px){
+    body{
+        background-image: url("./images/bg-mobile.svg");
+        background-size: contain;
+    }
+    header{
+        padding: 1.5rem 3rem;
+    }
+    header>img{
+        max-width:200px;
+    }
+    .information{
+        padding: 2.5rem 0 0 0;
+    }
+    .information h1{
+        font-size: 2.5rem;
+    }
+    .information p{
+        font-size: 1.125rem;
+    }
+    .information button{   
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width:600px){
+    .information h1{
+        font-size: 2.5rem;
+    }
+    .information button{   
+        padding: .7rem 4rem;
+        border-radius: 8rem;
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width:500px){
+    .information h1{
+        font-size: 2rem;
+    }
+    
+}
+
+@media (max-width:450px) {
+    body{
+        gap: 3rem;
+    }
+    header{
+        padding-top: 1rem;
+    }
+    header img{
+        width: 150px;
+    }
+    .information h1{
+        font-size: 1.75rem;
+    }
+    .information button{   
+        padding: .7rem 5rem;
+        border-radius: 8rem;
+        font-size: 1rem;
+    }
+    
+}
+
+@media (max-width:400px) {
+
+    .information h1{
+        font-size: 1.5rem;
+    }
+    .information p{
+        font-size: 1.125rem;
+        letter-spacing: 0px;
+    }
+    .information button{   
+        padding: .7rem 5rem;
+        border-radius: 8rem;
+        font-size: 1rem;
+    }
+    .social a i{
+        font-size: 1rem;
+    }
+    .social a #facebook-icon{
+        padding: .5rem .65rem;
+    }
+    
+}
