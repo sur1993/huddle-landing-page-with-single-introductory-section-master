@@ -64,8 +64,8 @@ h6 {
   --fw-400: 400;
   --fw-600: 600;
 
-  --fs-large: 3.5rem;
-  --fs-regular: 1.4rem;
+  --fs-large: 3rem;
+  --fs-regular: 1.2rem;
 }
 
 body{
@@ -73,7 +73,7 @@ body{
     font-weight: var(--fw-400);
     font-size: var(--fs-regular);
     background-color: var(--clr-Violet);
-    background-image: url("/images/bg-desktop.svg");
+    background-image: url("./images/bg-desktop.svg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
